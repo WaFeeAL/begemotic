@@ -1,0 +1,74 @@
+[tool.poetry]
+name = "Bestplace Geo Machine for Tiptop Calculations (Begemotic)"
+version = "0.1.0"
+description = "Backend of service for calculating geofactors with HTTP API."
+authors = ["Dmitry Yurkevich <Herobrin504@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.87.0"
+uvicorn = "^0.20.0"
+pydantic = {extras = ["dotenv"], version = "^1.10.2"}
+SQLAlchemy = "^1.4.44"
+alembic = "^1.8.1"
+python-dotenv = "^0.21.0"
+
+[tool.poetry.dev-dependencies]
+ruff = "^0.0.141"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 79
+
+select = [
+    'F', # pyflakes
+    'E', # pycodestyle errors
+    'W', # pycodestyle warnings
+    'I', # isort
+    'N', # pep8-naming
+    'C', # flake8-comprehensions
+    'B', # flake8-bugbear
+    'Q', # flake8-quotes
+    'ANN', # flake8-annotations
+]
+
+# Google ingore rules
+extend-ignore = [
+    "D203",
+    "D204",
+    "D213",
+    "D215",
+    "D400",
+    "D404",
+    "D406",
+    "D407",
+    "D408",
+    "D409",
+    "D413",
+]
+
+extend-exclude = [
+    'migrations',
+]
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+target-version = 'py310'
+
+[tool.ruff.isort]
+known-first-party = [
+    'begemotic',
+]
+
+known-third-party = [
+    'fastapi',
+    'pydantic',
+    'starlette',
+    'sqlalchemy',
+    'uvicorn',
+    'python-dotenv'
+]
