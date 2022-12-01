@@ -72,3 +72,6 @@ known-third-party = [
     'uvicorn',
     'python-dotenv'
 ]
+
+[tool.ruff.flake8-quotes]
+inline-quotes = 'single'
