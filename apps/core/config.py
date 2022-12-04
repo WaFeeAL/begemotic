@@ -8,6 +8,7 @@ class Settings(BaseSettings):
         Path(__file__).resolve().parent.parent.parent
     )
     DEBUG: bool = Field(False, env='DEBUG')
+    DEFAULT_DATASET_NAME: str = Field(..., env='DEFAULT_DATASET_NAME')
 
     class Config:
         env_file = '.env'
