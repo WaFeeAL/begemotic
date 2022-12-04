@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Body
 
-from apps.begemotic.controllers import HexController
-from apps.begemotic.schemas import HexesAggregationSchema
+from apps.hex.controllers import HexController
+from apps.hex.schemas import HexesAggregationSchema
 
-router = APIRouter()
+hex_router = APIRouter()
 
 
-@router.post('/calculate-hexes-aggregation', tags=['hex-operations'])
+@hex_router.post('/calculate-hexes-aggregation', tags=['hex-operations'])
 async def calculate_hexes_aggregation(
         hexes_aggr: HexesAggregationSchema = Body(...)
 ):

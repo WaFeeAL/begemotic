@@ -1,4 +1,4 @@
-from apps.begemotic.schemas import AggregationTypeEnum
+from apps.enums import AggregationTypeEnum
 
 
 async def update_aggregation(

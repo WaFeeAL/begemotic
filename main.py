@@ -4,7 +4,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 
-from apps.begemotic.routes import router
+from apps.hex.routes import hex_router
 from apps.core.exception_handler import override_exception_handler
 
 app = FastAPI()
@@ -12,7 +12,7 @@ app.add_exception_handler(
     RequestValidationError, override_exception_handler
 )
 
-app.include_router(router)
+app.include_router(hex_router)
 
 if __name__ == '__main__':
     uvicorn.run(

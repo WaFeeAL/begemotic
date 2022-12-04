@@ -1,15 +1,11 @@
 from h3 import geo_to_h3, k_ring
 
-from apps.begemotic.schemas import (
-    AggregationTypeEnum,
-    DatasetFieldEnum,
-    GeoCharacteristicsSchema,
-    GeoPositionEnum,
-    HexesAggregationSchema,
-)
-from apps.begemotic.utils import update_aggregation
+from apps.hex.schemas import HexesAggregationSchema
+from apps.hex.utils import update_aggregation
 from apps.core import get_settings
 from apps.core.loader import load_csv
+from apps.enums import AggregationTypeEnum, DatasetFieldEnum, GeoPositionEnum
+from apps.schemas import GeoCharacteristicsSchema
 
 
 class HexController:
