@@ -9,9 +9,11 @@ python = "^3.10"
 fastapi = "^0.87.0"
 uvicorn = "^0.20.0"
 pydantic = {extras = ["dotenv"], version = "^1.10.2"}
-SQLAlchemy = "^1.4.44"
-alembic = "^1.8.1"
 python-dotenv = "^0.21.0"
+aiofiles = "^22.1.0"
+aiocsv = "^1.2.3"
+geojson-pydantic = "^0.4.3"
+h3 = "^3.7.6"
 
 [tool.poetry.dev-dependencies]
 ruff = "^0.0.141"
@@ -72,3 +74,6 @@ known-third-party = [
     'uvicorn',
     'python-dotenv'
 ]
+
+[tool.ruff.flake8-quotes]
+inline-quotes = 'single'

@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  backend:
+    build: .
+    init: true
+    restart: always
+    container_name: begemotic-backend
+    command: uvicorn main:app --host 0.0.0.0 --access-log --use-colors
+    volumes:
+      - .:/begemotic
+    ports:
+      - "777:8000"
+    env_file:
+      - .env
