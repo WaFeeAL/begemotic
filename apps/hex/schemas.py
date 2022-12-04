@@ -4,7 +4,7 @@ from pydantic import BaseModel, Extra, Field
 from apps.enums import AggregationTypeEnum, DatasetFieldEnum
 
 
-class HexesAggregationSchema(BaseModel):
+class HexAggregationSchema(BaseModel):
     geometry: Point = Field(
         ..., title='Координаты точки',
         description='Координаты точки в формате geojson.'

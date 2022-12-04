@@ -1,6 +1,6 @@
 from h3 import geo_to_h3, k_ring
 
-from apps.hex.schemas import HexesAggregationSchema
+from apps.hex.schemas import HexAggregationSchema
 from apps.hex.utils import update_aggregation
 from apps.core import get_settings
 from apps.core.loader import load_csv
@@ -10,7 +10,7 @@ from apps.schemas import GeoCharacteristicsSchema
 
 class HexController:
     @staticmethod
-    async def calculate_hexes_aggregation(hexes_aggr: HexesAggregationSchema):
+    async def calculate_hexes_aggregation(hexes_aggr: HexAggregationSchema):
         hex_id: str = geo_to_h3(
             hexes_aggr.geometry.coordinates[GeoPositionEnum.LATITUDE],
             hexes_aggr.geometry.coordinates[GeoPositionEnum.LONGITUDE],
