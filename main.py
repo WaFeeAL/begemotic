@@ -2,8 +2,14 @@ from os import environ
 
 import uvicorn
 from fastapi import FastAPI
+from fastapi.exceptions import RequestValidationError
+
+from apps.core.exception_handler import override_exception_handler
 
 app = FastAPI()
+app.add_exception_handler(
+    RequestValidationError, override_exception_handler
+)
 
 if __name__ == '__main__':
     uvicorn.run(
