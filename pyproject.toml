@@ -12,6 +12,8 @@ pydantic = {extras = ["dotenv"], version = "^1.10.2"}
 python-dotenv = "^0.21.0"
 aiofiles = "^22.1.0"
 aiocsv = "^1.2.3"
+geojson-pydantic = "^0.4.3"
+h3 = "^3.7.6"
 
 [tool.poetry.dev-dependencies]
 ruff = "^0.0.141"
